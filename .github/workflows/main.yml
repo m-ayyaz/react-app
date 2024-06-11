@@ -21,11 +21,11 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t react-app .
-          docker tag react-app ${{ secrets.DOCKER_REGISTRY }}repository/docker/mayyazmunir/react-app:latest
+          docker tag react-app ${{ secrets.DOCKER_REGISTRY }}mayyazmunir/react-app:latest
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_REGISTRY }}repository/docker/mayyazmunir/react-app:latest
+          docker push ${{ secrets.DOCKER_REGISTRY }}mayyazmunir/react-app:latest
 
       - name: Configure kubectl
         uses: azure/k8s-set-context@v1
